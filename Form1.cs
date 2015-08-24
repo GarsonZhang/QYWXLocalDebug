@@ -263,6 +263,11 @@ namespace QYWXLocalDebug
         }
         #endregion
 
+        private void Form1_Shown(object sender, EventArgs e)
+        {
+            frmAbout.ShowForm();
+        }
+
 
 
     }

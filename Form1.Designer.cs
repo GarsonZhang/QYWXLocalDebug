@@ -43,6 +43,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.txt_TextResult = new System.Windows.Forms.TextBox();
             this.btn_SendText = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.txt_EncodingAESKey = new System.Windows.Forms.TextBox();
             this.txt_CorpID = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.label11 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -240,6 +240,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1234, 371);
             this.panel3.TabIndex = 9;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(874, 240);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(335, 48);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "如果第一行出现：\r\n<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n需要修改程序去掉这一行，因为" +
+    "如果第一行是这一句的话，\r\n微信服务器会处理错误";
             // 
             // txt_TextResult
             // 
@@ -547,16 +557,6 @@
             this.splitContainer1.SplitterDistance = 146;
             this.splitContainer1.TabIndex = 11;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(874, 240);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(335, 48);
-            this.label11.TabIndex = 9;
-            this.label11.Text = "如果第一行出现：\r\n<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n需要修改程序去掉这一行，因为" +
-    "如果第一行是这一句的话，\r\n微信服务器会处理错误";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -567,6 +567,7 @@
             this.Name = "Form1";
             this.Text = "微信企业号本地调试";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.Form1_Shown);
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
