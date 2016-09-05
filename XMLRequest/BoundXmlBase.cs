@@ -13,17 +13,17 @@ namespace QYWXLocalDebug.XMLRequest
         public const string MsgType = "MsgType";
         public const string AgentID = "AgentID";
 
-        public event XmlChanged XMLChanged;
+        public event XmlChanged XmlChanged;
 
-        protected TextBox CurrentTextBox;
+        protected Control CurrentControl;
 
         protected Dictionary<Control, string> LstControls = new Dictionary<Control, string>();
 
-        public virtual void Add(Control txt, string Attribute)
+        public virtual void Add(Control txt, string attribute)
         {
             if (LstControls.ContainsKey(txt)) return;
 
-            LstControls.Add(txt, Attribute);
+            LstControls.Add(txt, attribute);
         }
 
         public virtual void Remove(Control txt)
@@ -46,11 +46,11 @@ namespace QYWXLocalDebug.XMLRequest
 
         protected virtual void key_Validated(object sender, EventArgs e)
         {
-            if (XMLChanged != null)
-                XMLChanged(xml);
+            if (XmlChanged != null)
+                XmlChanged(xml);
         }
 
-        protected virtual void SetAttribute(string Attribte, string Value)
+        protected virtual void SetAttribute(string attribte, string value)
         {
             throw new NotImplementedException();
         }

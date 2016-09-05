@@ -13,7 +13,7 @@ namespace QYWXLocalDebug.XMLRequest
 
         public override string GetXML()
         {
-            string Result = "<xml>" + Environment.NewLine
+            string result = "<xml>" + Environment.NewLine
                             + String.Format("<SuiteId><![CDATA[{0}]]></SuiteId>", SuiteId) + Environment.NewLine
                             + String.Format("<InfoType><![CDATA[{0}]]></InfoType>", InfoType) + Environment.NewLine
                             + String.Format("<TimeStamp>{0}</TimeStamp>", CreateTime) + Environment.NewLine
@@ -22,7 +22,7 @@ namespace QYWXLocalDebug.XMLRequest
                             + String.Format("<AuthCode><![CDATA[{0}]]></AuthCode>", AuthCode) + Environment.NewLine
                             + String.Format("<Seq>{0}</Seq>", Seq) + Environment.NewLine
                             + "</xml>";
-            return Result;
+            return result;
         }
     }
 }

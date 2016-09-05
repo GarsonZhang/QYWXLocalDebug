@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace QYWXLocalDebug.XMLRequest
@@ -19,7 +20,7 @@ namespace QYWXLocalDebug.XMLRequest
         }
 
 
-        public RequestXmlThirdPartyCallback XML
+        public RequestXmlThirdPartyCallback Xml
         {
             get
             {
@@ -29,44 +30,45 @@ namespace QYWXLocalDebug.XMLRequest
 
         protected override void key_Validated(object sender, EventArgs e)
         {
-            CurrentTextBox = (sender as TextBox);
-            string attribute = ConvertEx.ToString(CurrentTextBox.Tag);
+            CurrentControl = (sender as Control);
+            Debug.Assert(CurrentControl != null, "CurrentControl != null");
+            var attribute = ConvertEx.ToString(CurrentControl.Tag);
 
-            SetAttribute(attribute, CurrentTextBox.Text);
+            SetAttribute(attribute, CurrentControl.Text);
 
 
             base.key_Validated(sender, e);
         }
 
-        protected override void SetAttribute(string Attribte, string Value)
+        protected override void SetAttribute(string attribte, string value)
         {
-            switch (Attribte)
+            switch (attribte)
             {
                 case ToUserName:
-                    XML.ToUserName = Value; break;
+                    Xml.ToUserName = value; break;
                 case FromUserName:
-                    XML.FromUserName = Value; break;
+                    Xml.FromUserName = value; break;
                 case CreateTime:
-                    XML.CreateTime = Value; break;
+                    Xml.CreateTime = value; break;
                 case MsgType:
-                    XML.MsgType = Value; break;
+                    Xml.MsgType = value; break;
                 case AgentID:
-                    XML.AgentID = Value; break;
+                    Xml.AgentID = value; break;
                 case InfoType:
-                    XML.InfoType = Value; break;
+                    Xml.InfoType = value; break;
                 case SuiteId:
-                    XML.SuiteId = Value; break;
+                    Xml.SuiteId = value; break;
                 case SuiteTicket:
-                    XML.SuiteTicket = Value; break;
+                    Xml.SuiteTicket = value; break;
                 case AuthCorpId:
-                    XML.AuthCorpId = Value; break;
+                    Xml.AuthCorpId = value; break;
                 case AuthCode:
-                    XML.AuthCode = Value; break;
+                    Xml.AuthCode = value; break;
                 case Seq:
-                    XML.Seq = Value; break;
+                    Xml.Seq = value; break;
                 default:
                     {
-                        throw new Exception("没有找到对应的字段：" + Attribte);
+                        throw new Exception("没有找到对应的字段：" + attribte);
                     }
             }
         }

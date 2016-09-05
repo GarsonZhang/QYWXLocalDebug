@@ -68,7 +68,7 @@ namespace QYWXLocalDebug
 
         }
 
-        public static string Post(string url, string data)
+        public static string TryPost(string url, string data,out bool success)
         {
             string returnData = null;
             try
@@ -76,7 +76,7 @@ namespace QYWXLocalDebug
                 byte[] buffer = Encoding.UTF8.GetBytes(data);
                 HttpWebRequest webReq = (HttpWebRequest)WebRequest.Create(url);
                 webReq.Method = "POST";
-                webReq.ContentType = "application/x-www-form-urlencoded";
+                //webReq.ContentType = "application/x-www-form-urlencoded";
                 webReq.ContentLength = buffer.Length;
                 Stream postData = webReq.GetRequestStream();
                 webReq.Timeout = 99999999;
@@ -90,8 +90,10 @@ namespace QYWXLocalDebug
             }
             catch (Exception ex)
             {
+                success = false;
                 return "获取错误:"+ex.Message;
             }
+            success = true;
             return returnData.Trim() + "\n";
         }
 

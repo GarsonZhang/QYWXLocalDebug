@@ -43,7 +43,7 @@ namespace QYWXLocalDebug
 
             XML.IniNotice();
 
-            XML.XMLChanged += XML_AttributeChanged;
+            XML.XmlChanged += XML_AttributeChanged;
         }
 
       

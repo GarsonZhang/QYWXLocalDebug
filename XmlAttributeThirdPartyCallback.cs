@@ -22,22 +22,22 @@ namespace QYWXLocalDebug
             if (CheckDesingModel.IsDesingMode) return;
 
             //模拟微信发送消息
-            BoundXmlThirdPartyCallback XMLText = new BoundXmlThirdPartyCallback();
-            XMLText.Add(txt_ToUserName, BoundXmlBase.ToUserName);
-            XMLText.Add(txt_FromUserName, BoundXmlBase.FromUserName);
-            XMLText.Add(txt_CreateTime, BoundXmlBase.CreateTime);
-            XMLText.Add(txt_MsgType, BoundXmlBase.MsgType);
-            XMLText.Add(txt_AgentID, BoundXmlBase.AgentID);
-            XMLText.Add(cmbInfoType, BoundXmlThirdPartyCallback.InfoType);
-            XMLText.Add(txtSuiteId, BoundXmlThirdPartyCallback.SuiteId);
-            XMLText.Add(txtSuiteTicket, BoundXmlThirdPartyCallback.SuiteTicket);
-            XMLText.Add(txtAuthCorpId, BoundXmlThirdPartyCallback.AuthCorpId);
-            XMLText.Add(txtAuthCode, BoundXmlThirdPartyCallback.AuthCode);
-            XMLText.Add(txtSeq, BoundXmlThirdPartyCallback.Seq);
+            var xmlText = new BoundXmlThirdPartyCallback();
+            xmlText.Add(txt_ToUserName, BoundXmlBase.ToUserName);
+            xmlText.Add(txt_FromUserName, BoundXmlBase.FromUserName);
+            xmlText.Add(txt_CreateTime, BoundXmlBase.CreateTime);
+            xmlText.Add(txt_MsgType, BoundXmlBase.MsgType);
+            xmlText.Add(txt_AgentID, BoundXmlBase.AgentID);
+            xmlText.Add(cmbInfoType, BoundXmlThirdPartyCallback.InfoType);
+            xmlText.Add(txtSuiteId, BoundXmlThirdPartyCallback.SuiteId);
+            xmlText.Add(txtSuiteTicket, BoundXmlThirdPartyCallback.SuiteTicket);
+            xmlText.Add(txtAuthCorpId, BoundXmlThirdPartyCallback.AuthCorpId);
+            xmlText.Add(txtAuthCode, BoundXmlThirdPartyCallback.AuthCode);
+            xmlText.Add(txtSeq, BoundXmlThirdPartyCallback.Seq);
 
-            XMLText.IniNotice();
+            xmlText.IniNotice();
 
-            XMLText.XMLChanged += XML_AttributeChanged;
+            xmlText.XmlChanged += XML_AttributeChanged;
         }
     }
 }

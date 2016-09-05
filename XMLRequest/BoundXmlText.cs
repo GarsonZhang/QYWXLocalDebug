@@ -25,36 +25,36 @@ namespace QYWXLocalDebug.XMLRequest
 
         protected override void key_Validated(object sender, EventArgs e)
         {
-            CurrentTextBox = (sender as TextBox);
-            string attribute = ConvertEx.ToString(CurrentTextBox.Tag);
+            CurrentControl = (sender as TextBox);
+            string attribute = ConvertEx.ToString(CurrentControl.Tag);
 
-            SetAttribute(attribute, CurrentTextBox.Text);
+            SetAttribute(attribute, CurrentControl.Text);
 
 
             base.key_Validated(sender, e);
         }
 
-        protected override void SetAttribute(string Attribte, string Value)
+        protected override void SetAttribute(string attribte, string value)
         {
-            switch (Attribte)
+            switch (attribte)
             {
                 case ToUserName:
-                    XML.ToUserName = Value; break;
+                    XML.ToUserName = value; break;
                 case FromUserName:
-                    XML.FromUserName = Value; break;
+                    XML.FromUserName = value; break;
                 case CreateTime:
-                    XML.CreateTime = Value; break;
+                    XML.CreateTime = value; break;
                 case MsgType:
-                    XML.MsgType = Value; break;
+                    XML.MsgType = value; break;
                 case Content:
-                    XML.Content = Value; break;
+                    XML.Content = value; break;
                 case MsgId:
-                    XML.MsgId = Value; break;
+                    XML.MsgId = value; break;
                 case AgentID:
-                    XML.AgentID = Value; break;
+                    XML.AgentID = value; break;
                 default:
                 {
-                    throw new Exception("没有找到对应的字段：" + Attribte);
+                    throw new Exception("没有找到对应的字段：" + attribte);
                 }
             }
         }
