@@ -61,15 +61,15 @@
             "cancel_auth",
             "create_auth",
             "contact_sync"});
-            this.cmbInfoType.Location = new System.Drawing.Point(92, 170);
+            this.cmbInfoType.Location = new System.Drawing.Point(271, 21);
             this.cmbInfoType.Name = "cmbInfoType";
-            this.cmbInfoType.Size = new System.Drawing.Size(100, 21);
+            this.cmbInfoType.Size = new System.Drawing.Size(177, 21);
             this.cmbInfoType.TabIndex = 43;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 177);
+            this.label1.Location = new System.Drawing.Point(204, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 44;
@@ -77,7 +77,7 @@
             // 
             // txtSuiteId
             // 
-            this.txtSuiteId.Location = new System.Drawing.Point(277, 20);
+            this.txtSuiteId.Location = new System.Drawing.Point(271, 53);
             this.txtSuiteId.Name = "txtSuiteId";
             this.txtSuiteId.Size = new System.Drawing.Size(177, 20);
             this.txtSuiteId.TabIndex = 46;
@@ -85,7 +85,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(210, 24);
+            this.label17.Location = new System.Drawing.Point(204, 57);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(40, 13);
             this.label17.TabIndex = 45;
@@ -93,7 +93,7 @@
             // 
             // txtSuiteTicket
             // 
-            this.txtSuiteTicket.Location = new System.Drawing.Point(277, 50);
+            this.txtSuiteTicket.Location = new System.Drawing.Point(271, 83);
             this.txtSuiteTicket.Name = "txtSuiteTicket";
             this.txtSuiteTicket.Size = new System.Drawing.Size(177, 20);
             this.txtSuiteTicket.TabIndex = 48;
@@ -101,7 +101,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(210, 54);
+            this.label2.Location = new System.Drawing.Point(204, 87);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 47;
@@ -109,7 +109,7 @@
             // 
             // txtAuthCorpId
             // 
-            this.txtAuthCorpId.Location = new System.Drawing.Point(277, 82);
+            this.txtAuthCorpId.Location = new System.Drawing.Point(271, 115);
             this.txtAuthCorpId.Name = "txtAuthCorpId";
             this.txtAuthCorpId.Size = new System.Drawing.Size(177, 20);
             this.txtAuthCorpId.TabIndex = 50;
@@ -117,7 +117,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 86);
+            this.label3.Location = new System.Drawing.Point(204, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(60, 13);
             this.label3.TabIndex = 49;
@@ -125,7 +125,7 @@
             // 
             // txtAuthCode
             // 
-            this.txtAuthCode.Location = new System.Drawing.Point(277, 114);
+            this.txtAuthCode.Location = new System.Drawing.Point(271, 147);
             this.txtAuthCode.Name = "txtAuthCode";
             this.txtAuthCode.Size = new System.Drawing.Size(177, 20);
             this.txtAuthCode.TabIndex = 52;
@@ -133,7 +133,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(210, 118);
+            this.label4.Location = new System.Drawing.Point(204, 151);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(54, 13);
             this.label4.TabIndex = 51;
@@ -142,7 +142,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(210, 144);
+            this.label5.Location = new System.Drawing.Point(204, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 53;
@@ -150,7 +150,7 @@
             // 
             // txtSeq
             // 
-            this.txtSeq.Location = new System.Drawing.Point(277, 143);
+            this.txtSeq.Location = new System.Drawing.Point(271, 176);
             this.txtSeq.Name = "txtSeq";
             this.txtSeq.Size = new System.Drawing.Size(177, 20);
             this.txtSeq.TabIndex = 55;

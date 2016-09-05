@@ -6,8 +6,12 @@ namespace QYWXLocalDebug.XMLRequest
     public class BoundXmlThirdPartyCallback : BoundXmlBase
     {
 
-        public const string Content = "Content";
-        public const string MsgId = "MsgId";
+        public const string InfoType = "InfoType";
+        public const string SuiteId = "SuiteId";
+        public const string SuiteTicket = "SuiteTicket";
+        public const string AuthCorpId = "AuthCorpId";
+        public const string AuthCode = "AuthCode";
+        public const string Seq = "Seq";
 
         public BoundXmlThirdPartyCallback()
         {
@@ -46,16 +50,24 @@ namespace QYWXLocalDebug.XMLRequest
                     XML.CreateTime = Value; break;
                 case MsgType:
                     XML.MsgType = Value; break;
-                case Content:
-                    XML.Content = Value; break;
-                case MsgId:
-                    XML.MsgId = Value; break;
                 case AgentID:
                     XML.AgentID = Value; break;
+                case InfoType:
+                    XML.InfoType = Value; break;
+                case SuiteId:
+                    XML.SuiteId = Value; break;
+                case SuiteTicket:
+                    XML.SuiteTicket = Value; break;
+                case AuthCorpId:
+                    XML.AuthCorpId = Value; break;
+                case AuthCode:
+                    XML.AuthCode = Value; break;
+                case Seq:
+                    XML.Seq = Value; break;
                 default:
-                {
-                    throw new Exception("没有找到对应的字段：" + Attribte);
-                }
+                    {
+                        throw new Exception("没有找到对应的字段：" + Attribte);
+                    }
             }
         }
 

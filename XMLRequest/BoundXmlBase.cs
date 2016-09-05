@@ -17,27 +17,27 @@ namespace QYWXLocalDebug.XMLRequest
 
         protected TextBox CurrentTextBox;
 
-        protected Dictionary<TextBox, string> lstTextBox = new Dictionary<TextBox, string>();
+        protected Dictionary<Control, string> LstControls = new Dictionary<Control, string>();
 
-        public virtual void Add(TextBox txt, string Attribute)
+        public virtual void Add(Control txt, string Attribute)
         {
-            if (lstTextBox.ContainsKey(txt)) return;
+            if (LstControls.ContainsKey(txt)) return;
 
-            lstTextBox.Add(txt, Attribute);
+            LstControls.Add(txt, Attribute);
         }
 
-        public virtual void Remove(TextBox txt)
+        public virtual void Remove(Control txt)
         {
-            if (lstTextBox.ContainsKey(txt))
-                lstTextBox.Remove(txt);
+            if (LstControls.ContainsKey(txt))
+                LstControls.Remove(txt);
         }
 
         public virtual void IniNotice()
         {
-            foreach (var key in lstTextBox.Keys)
+            foreach (var key in LstControls.Keys)
             {
-                key.Tag = lstTextBox[key];
-                SetAttribute(lstTextBox[key], key.Text);
+                key.Tag = LstControls[key];
+                SetAttribute(LstControls[key], key.Text);
                 key.Validated += key_Validated;
             }
         }

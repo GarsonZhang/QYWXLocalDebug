@@ -21,16 +21,19 @@ namespace QYWXLocalDebug
         {
             if (CheckDesingModel.IsDesingMode) return;
 
-            txt_MsgType.Text = "text";
             //模拟微信发送消息
             BoundXmlThirdPartyCallback XMLText = new BoundXmlThirdPartyCallback();
-            XMLText.Add(txt_ToUserName, BoundXmlText.ToUserName);
-            XMLText.Add(txt_FromUserName, BoundXmlText.FromUserName);
-            XMLText.Add(txt_CreateTime, BoundXmlText.CreateTime);
-            XMLText.Add(txt_MsgType, BoundXmlText.MsgType);
-            XMLText.Add(txt_Content, BoundXmlText.Content);
-            XMLText.Add(txt_MsgId, BoundXmlText.MsgId);
-            XMLText.Add(txt_AgentID, BoundXmlText.AgentID);
+            XMLText.Add(txt_ToUserName, BoundXmlBase.ToUserName);
+            XMLText.Add(txt_FromUserName, BoundXmlBase.FromUserName);
+            XMLText.Add(txt_CreateTime, BoundXmlBase.CreateTime);
+            XMLText.Add(txt_MsgType, BoundXmlBase.MsgType);
+            XMLText.Add(txt_AgentID, BoundXmlBase.AgentID);
+            XMLText.Add(cmbInfoType, BoundXmlThirdPartyCallback.InfoType);
+            XMLText.Add(txtSuiteId, BoundXmlThirdPartyCallback.SuiteId);
+            XMLText.Add(txtSuiteTicket, BoundXmlThirdPartyCallback.SuiteTicket);
+            XMLText.Add(txtAuthCorpId, BoundXmlThirdPartyCallback.AuthCorpId);
+            XMLText.Add(txtAuthCode, BoundXmlThirdPartyCallback.AuthCode);
+            XMLText.Add(txtSeq, BoundXmlThirdPartyCallback.Seq);
 
             XMLText.IniNotice();
 

@@ -56,6 +56,7 @@
             this.xmlAttributeText1 = new QYWXLocalDebug.XmlAttributeText();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.xmlAttributeEventKey1 = new QYWXLocalDebug.XmlAttributeEventKey();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -75,7 +76,7 @@
             this.txt_EncodingAESKey = new System.Windows.Forms.TextBox();
             this.txt_CorpID = new System.Windows.Forms.TextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.xmlAttributeThirdPartyCallback1 = new QYWXLocalDebug.XmlAttributeThirdPartyCallback();
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -83,6 +84,7 @@
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -372,6 +374,17 @@
             this.xmlAttributeEventKey1.TabIndex = 0;
             this.xmlAttributeEventKey1.XMLTextBox = null;
             // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.xmlAttributeThirdPartyCallback1);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(1226, 182);
+            this.tabPage6.TabIndex = 2;
+            this.tabPage6.Text = "第三方回调事件";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -559,15 +572,14 @@
             this.splitContainer1.SplitterDistance = 158;
             this.splitContainer1.TabIndex = 11;
             // 
-            // tabPage6
+            // xmlAttributeThirdPartyCallback1
             // 
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(1226, 182);
-            this.tabPage6.TabIndex = 2;
-            this.tabPage6.Text = "第三方回调事件";
-            this.tabPage6.UseVisualStyleBackColor = true;
+            this.xmlAttributeThirdPartyCallback1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xmlAttributeThirdPartyCallback1.Location = new System.Drawing.Point(3, 3);
+            this.xmlAttributeThirdPartyCallback1.Name = "xmlAttributeThirdPartyCallback1";
+            this.xmlAttributeThirdPartyCallback1.Size = new System.Drawing.Size(1220, 176);
+            this.xmlAttributeThirdPartyCallback1.TabIndex = 0;
+            this.xmlAttributeThirdPartyCallback1.XMLTextBox = null;
             // 
             // Form1
             // 
@@ -589,6 +601,7 @@
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -650,6 +663,7 @@
         private XmlAttributeEventKey xmlAttributeEventKey1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TabPage tabPage6;
+        private XmlAttributeThirdPartyCallback xmlAttributeThirdPartyCallback1;
     }
 }
 
