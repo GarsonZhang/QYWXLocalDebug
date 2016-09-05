@@ -1,13 +1,4 @@
-﻿/*************************************************************************
-    ========================微信企业号开发本地调试========================
-    作者：GarsonZhang
-    QQ：382237285 
-    小广告：【winform快速开发框架，请关注GZFramwork，关注作者GarsonZhang】
- 
-    感谢你使用本程序，将开源进行到底
-    如果你有新需求，请联系我，增加对你的支持
- ************************************************************************/
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -19,20 +10,20 @@ using QYWXLocalDebug.XMLRequest;
 
 namespace QYWXLocalDebug
 {
-    public partial class XmlAttributeText : XmlAttributeBase
+    public partial class XmlAttributeThirdPartyCallback : XmlAttributeBase
     {
-        public XmlAttributeText()
+        public XmlAttributeThirdPartyCallback()
         {
             InitializeComponent();
         }
 
-        private void TextAttribute_Load(object sender, EventArgs e)
+        private void XmlAttributeThirdPartyCallback_Load(object sender, EventArgs e)
         {
             if (CheckDesingModel.IsDesingMode) return;
 
             txt_MsgType.Text = "text";
             //模拟微信发送消息
-            BoundXmlText XMLText = new BoundXmlText();
+            BoundXmlThirdPartyCallback XMLText = new BoundXmlThirdPartyCallback();
             XMLText.Add(txt_ToUserName, BoundXmlText.ToUserName);
             XMLText.Add(txt_FromUserName, BoundXmlText.FromUserName);
             XMLText.Add(txt_CreateTime, BoundXmlText.CreateTime);
@@ -45,8 +36,5 @@ namespace QYWXLocalDebug
 
             XMLText.XMLChanged += XML_AttributeChanged;
         }
-
-       
-
     }
 }
