@@ -7,7 +7,7 @@ namespace QYWXLocalDebug.XMLRequest
         public string Content { get; set; }
         public string MsgId { get; set; }
 
-        public override string GetXML()
+        public override string GetXml()
         {
             string Result = "<xml>" + Environment.NewLine
                             + String.Format("<ToUserName><![CDATA[{0}]]></ToUserName>", ToUserName) + Environment.NewLine

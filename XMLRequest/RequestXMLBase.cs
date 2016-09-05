@@ -10,7 +10,7 @@ namespace QYWXLocalDebug.XMLRequest
         public string MsgType { get; set; }
         public string AgentID { get; set; }
 
-        public virtual string GetXML()
+        public virtual string GetXml()
         {
             throw new NotImplementedException();
         }

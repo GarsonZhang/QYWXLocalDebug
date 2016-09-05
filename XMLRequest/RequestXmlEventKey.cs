@@ -7,7 +7,7 @@ namespace QYWXLocalDebug.XMLRequest
         public string Event { get; set; }
         public string EventKey { get; set; }
 
-        public override string GetXML()
+        public override string GetXml()
         {
 
 

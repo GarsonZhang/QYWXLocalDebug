@@ -352,7 +352,7 @@
             this.xmlAttributeText1.Name = "xmlAttributeText1";
             this.xmlAttributeText1.Size = new System.Drawing.Size(1220, 176);
             this.xmlAttributeText1.TabIndex = 0;
-            this.xmlAttributeText1.XMLTextBox = null;
+            this.xmlAttributeText1.XmlTextBox = null;
             // 
             // tabPage5
             // 
@@ -372,7 +372,7 @@
             this.xmlAttributeEventKey1.Name = "xmlAttributeEventKey1";
             this.xmlAttributeEventKey1.Size = new System.Drawing.Size(1220, 176);
             this.xmlAttributeEventKey1.TabIndex = 0;
-            this.xmlAttributeEventKey1.XMLTextBox = null;
+            this.xmlAttributeEventKey1.XmlTextBox = null;
             // 
             // tabPage6
             // 
@@ -579,7 +579,7 @@
             this.xmlAttributeThirdPartyCallback1.Name = "xmlAttributeThirdPartyCallback1";
             this.xmlAttributeThirdPartyCallback1.Size = new System.Drawing.Size(1220, 176);
             this.xmlAttributeThirdPartyCallback1.TabIndex = 0;
-            this.xmlAttributeThirdPartyCallback1.XMLTextBox = null;
+            this.xmlAttributeThirdPartyCallback1.XmlTextBox = null;
             // 
             // Form1
             // 

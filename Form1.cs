@@ -57,9 +57,9 @@ namespace QYWXLocalDebug
 
             BoundConfig.IniNotice();
 
-            xmlAttributeText1.XMLTextBox = txt_XMLText;
-            xmlAttributeEventKey1.XMLTextBox = txt_XMLText;
-
+            xmlAttributeText1.XmlTextBox = txt_XMLText;
+            xmlAttributeEventKey1.XmlTextBox = txt_XMLText;
+            xmlAttributeThirdPartyCallback1.XmlTextBox = txt_XMLText;
 
 
         }

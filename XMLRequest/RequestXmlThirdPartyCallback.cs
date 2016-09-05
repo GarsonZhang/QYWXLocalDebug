@@ -11,7 +11,7 @@ namespace QYWXLocalDebug.XMLRequest
         public string AuthCode { get; set; }
         public string Seq { get; set; }
 
-        public override string GetXML()
+        public override string GetXml()
         {
             string result = "<xml>" + Environment.NewLine
                             + String.Format("<SuiteId><![CDATA[{0}]]></SuiteId>", SuiteId) + Environment.NewLine
