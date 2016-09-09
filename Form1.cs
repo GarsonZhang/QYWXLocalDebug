@@ -45,7 +45,7 @@ namespace QYWXLocalDebug
         private void Form1_Load(object sender, EventArgs e)
         {
             //模拟微信回调验证
-            BoundTextConfig BoundConfig = new BoundTextConfig();
+            var BoundConfig = new BoundTextConfig();
             BoundConfig.Add(txt_CorpToken, ConfigData.FCorpToken);
             BoundConfig.Add(txt_CorpID, ConfigData.FCorpID);
             BoundConfig.Add(txt_EncodingAESKey, ConfigData.FEncodingAESKey);
@@ -57,40 +57,40 @@ namespace QYWXLocalDebug
 
             BoundConfig.IniNotice();
 
-            xmlAttributeText1.XMLTextBox = txt_XMLText;
-            xmlAttributeEventKey1.XMLTextBox = txt_XMLText;
-           
+            xmlAttributeText1.XmlTextBox = txt_XMLText;
+            xmlAttributeEventKey1.XmlTextBox = txt_XMLText;
+            xmlAttributeThirdPartyCallback1.XmlTextBox = txt_XMLText;
 
-            
+
         }
 
-      
+
         //获取参数按钮事件
         private void btn_msg_signature_Click(object sender, EventArgs e)
         {
             //先随机生成一个字符串用于回调验证
-            string msg = Guid.NewGuid().ToString().Replace("-", "");
+            var msg = Guid.NewGuid().ToString().Replace("-", "");
             txt_Msg.Text = msg;
 
 
-            string Msg_EncryptMsg = "";//加密后的数据
+            var Msg_EncryptMsg = "";//加密后的数据
             GetEncryptXML(msg, ref Msg_EncryptMsg);
 
-            string Encrypt = GenerateData.APIGetEncrypt(Msg_EncryptMsg);
+            var Encrypt = GenerateData.APIGetEncrypt(Msg_EncryptMsg);
             //获取到加密后XML的Encrypt节点，URL编码后以Get方式提交
             txt_echostr.Text = System.Web.HttpUtility.UrlEncode(Encrypt);
         }
 
 
-      
+
 
         //微信首次回调验证按钮事件
         private void btn_CallBackValidate_Click(object sender, EventArgs e)
         {
-            string URL = GenerateValidationURL();
+            var URL = GenerateValidationURL();
             txt_ValidURL.Text = URL;
 
-            if (String.IsNullOrEmpty(URL)) return;
+            if (string.IsNullOrEmpty(URL)) return;
 
             txt_ValidBackData.Text = CommonTools.GetWebData(URL);
         }
@@ -100,28 +100,34 @@ namespace QYWXLocalDebug
         {
             txt_TextResult.Text = "";
 
-            string Data = "";//加密后的XML数据
-            GetEncryptXML(txt_XMLText.Text, ref Data);
+            var data = "";//加密后的XML数据
+            GetEncryptXML(txt_XMLText.Text, ref data);
 
-            txt_EnyXMLText.Text = Data;
+            txt_EnyXMLText.Text = data;
 
-            string URL = GenerateURL();
+            var url = GenerateURL();
 
-            if (String.IsNullOrEmpty(URL))
+            if (string.IsNullOrEmpty(url))
             {
                 return;
             }
-            if (String.IsNullOrEmpty(Data))
+            if (string.IsNullOrEmpty(data))
             {
                 MessageBox.Show("需要Post的数据为空！,请填写内容！");
                 return;
             }
 
-            string Result = CommonTools.Post(URL, Data);
+            bool success;
+            var result = CommonTools.TryPost(url, data, out success);
 
-            string DenResult = GenerateData.APIResultHandler(Result);
-            txt_TextResult.Text = DenResult;
-
+            if (success)
+            {
+                txt_TextResult.Text = GenerateData.APIResultHandler(result);
+            }
+            else
+            {
+                txt_TextResult.Text = result;
+            }
         }
 
 
@@ -146,11 +152,11 @@ namespace QYWXLocalDebug
         /// <returns></returns>
         private string GenerateValidationURL()
         {
-            string URL = GenerateURL();
-            if (String.IsNullOrEmpty(URL))
+            var URL = GenerateURL();
+            if (string.IsNullOrEmpty(URL))
                 return "";
             if (ValidateTextEmpty(txt_echostr, "请填写echostr(微信回调获取到的)") == true) return "";
-            URL += String.Format("&echostr={0}", txt_echostr.Text);
+            URL += string.Format("&echostr={0}", txt_echostr.Text);
             return URL;
         }
 
@@ -162,9 +168,9 @@ namespace QYWXLocalDebug
         {
             if (!ValidateBeforGenerateURL())
                 return "";
-            string urlFormat = "{0}?msg_signature={1}&timestamp={2}&nonce={3}";
+            var urlFormat = "{0}?msg_signature={1}&timestamp={2}&nonce={3}";
 
-            string URL = String.Format(urlFormat, txt_URL.Text, txt_msg_signature.Text, txt_timestamp.Text, txt_nonce.Text);
+            var URL = string.Format(urlFormat, txt_URL.Text, txt_msg_signature.Text, txt_timestamp.Text, txt_nonce.Text);
 
             return URL;
         }
@@ -192,7 +198,7 @@ namespace QYWXLocalDebug
         /// <returns></returns>
         private bool ValidateTextEmpty(TextBox txt, string EmptyMsg)
         {
-            if (String.IsNullOrEmpty(txt.Text))
+            if (string.IsNullOrEmpty(txt.Text))
             {
                 MessageBox.Show(EmptyMsg);
                 txt_URL.Focus();
@@ -203,12 +209,12 @@ namespace QYWXLocalDebug
 
         #endregion
 
-   
+
 
         #region 字段，统一获取WXBizMsgCrypt，text文本内容等，
 
 
-      
+
 
 
         string CorpToken
@@ -274,5 +280,5 @@ namespace QYWXLocalDebug
 
     }
 
-   
+
 }

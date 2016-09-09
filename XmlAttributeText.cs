@@ -32,18 +32,18 @@ namespace QYWXLocalDebug
 
             txt_MsgType.Text = "text";
             //模拟微信发送消息
-            BoundXMLText XMLText = new BoundXMLText();
-            XMLText.Add(txt_ToUserName, BoundXMLText.ToUserName);
-            XMLText.Add(txt_FromUserName, BoundXMLText.FromUserName);
-            XMLText.Add(txt_CreateTime, BoundXMLText.CreateTime);
-            XMLText.Add(txt_MsgType, BoundXMLText.MsgType);
-            XMLText.Add(txt_Content, BoundXMLText.Content);
-            XMLText.Add(txt_MsgId, BoundXMLText.MsgId);
-            XMLText.Add(txt_AgentID, BoundXMLText.AgentID);
+            BoundXmlText XMLText = new BoundXmlText();
+            XMLText.Add(txt_ToUserName, BoundXmlText.ToUserName);
+            XMLText.Add(txt_FromUserName, BoundXmlText.FromUserName);
+            XMLText.Add(txt_CreateTime, BoundXmlText.CreateTime);
+            XMLText.Add(txt_MsgType, BoundXmlText.MsgType);
+            XMLText.Add(txt_Content, BoundXmlText.Content);
+            XMLText.Add(txt_MsgId, BoundXmlText.MsgId);
+            XMLText.Add(txt_AgentID, BoundXmlText.AgentID);
 
             XMLText.IniNotice();
 
-            XMLText.XMLChanged += XML_AttributeChanged;
+            XMLText.XmlChanged += XML_AttributeChanged;
         }
 
        

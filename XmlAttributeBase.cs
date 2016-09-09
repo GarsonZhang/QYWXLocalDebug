@@ -21,17 +21,17 @@ namespace QYWXLocalDebug
 {
     public partial class XmlAttributeBase : UserControl
     {
-        public TextBox XMLTextBox { get; set; }
+        public TextBox XmlTextBox { get; set; }
         public XmlAttributeBase()
         {
             InitializeComponent();
         }
 
         //XMLText自定义的XMLChanged事件，用于刷新发送消息的xml格式，实时刷新
-       protected  void XML_AttributeChanged(RequestXMLBase xml)
+        protected void XML_AttributeChanged(RequestXmlBase xml)
         {
-            if (XMLTextBox != null)
-                XMLTextBox.Text = xml.GetXML();
+            if (XmlTextBox != null)
+                XmlTextBox.Text = xml.GetXml();
         }
     }
 }

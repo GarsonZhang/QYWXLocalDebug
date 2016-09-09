@@ -39,9 +39,9 @@ namespace QYWXLocalDebug
         /// <summary>
         /// 解密获取的结果
         /// </summary>
-        /// <param name="Result"></param>
+        /// <param name="result"></param>
         /// <returns></returns>
-        public string APIResultHandler(string Result)
+        public string APIResultHandler(string result)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace QYWXLocalDebug
                 XmlDocument CBdoc = new XmlDocument();
                 XmlNode CBroot;
 
-                CBdoc.LoadXml(Result);
+                CBdoc.LoadXml(result);
                 CBroot = CBdoc.FirstChild;
                 string CBsEncryptMsg = CBroot["Encrypt"].InnerText;
                 string CBMsgSignature = CBroot["MsgSignature"].InnerText;
@@ -57,7 +57,7 @@ namespace QYWXLocalDebug
                 string CBNonce = CBroot["Nonce"].InnerText;
 
                 string DecResult = "";
-                int i = DecryptMsg(CBMsgSignature, CBTimeStamp, CBNonce, Result, ref DecResult);
+                int i = DecryptMsg(CBMsgSignature, CBTimeStamp, CBNonce, result, ref DecResult);
                 if (i == 0)
                 {
                     return DecResult;
@@ -69,7 +69,7 @@ namespace QYWXLocalDebug
             }
             catch
             {
-                return "Result";
+                return result;
             }
         }
 

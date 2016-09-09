@@ -11,6 +11,7 @@
     <AssemblyName>QYWXLocalDebug</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -21,6 +22,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -30,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>12099365_112411676125_2.ico</ApplicationIcon>
@@ -87,7 +91,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WXSDK\WXBizMsgCrypt.cs" />
-    <Compile Include="XMLRequest\XMLText.cs" />
+    <Compile Include="XmlAttributeThirdPartyCallback.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="XmlAttributeThirdPartyCallback.Designer.cs">
+      <DependentUpon>XmlAttributeThirdPartyCallback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XMLRequest\BoundXmlBase.cs" />
+    <Compile Include="XMLRequest\BoundXmlThirdPartyCallback.cs" />
+    <Compile Include="XMLRequest\BoundXmlText.cs" />
+    <Compile Include="XMLRequest\RequestXmlBase.cs" />
+    <Compile Include="XMLRequest\RequestXmlEventKey.cs" />
+    <Compile Include="XMLRequest\RequestXmlThirdPartyCallback.cs" />
+    <Compile Include="XMLRequest\RequestXmlText.cs" />
+    <Compile Include="XMLRequest\BoundXmlEventKey.cs" />
     <Compile Include="XmlAttributeBase.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -114,6 +131,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="XmlAttributeSubscribe.resx">
       <DependentUpon>XmlAttributeSubscribe.cs</DependentUpon>
@@ -121,6 +139,10 @@
     <EmbeddedResource Include="XmlAttributeText.resx">
       <DependentUpon>XmlAttributeText.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XmlAttributeThirdPartyCallback.resx">
+      <DependentUpon>XmlAttributeThirdPartyCallback.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
