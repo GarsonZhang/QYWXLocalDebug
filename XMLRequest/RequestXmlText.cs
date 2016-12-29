@@ -14,7 +14,7 @@ namespace QYWXLocalDebug.XMLRequest
                             + String.Format("<FromUserName><![CDATA[{0}]]></FromUserName>", FromUserName) + Environment.NewLine
                             + String.Format("<CreateTime>{0}</CreateTime>", CreateTime) + Environment.NewLine
                             + String.Format("<MsgType><![CDATA[{0}]]></MsgType>", MsgType) + Environment.NewLine
-                            + String.Format("<Content><![CDATA[{0} ]]></Content>", Content) + Environment.NewLine
+                            + String.Format("<Content><![CDATA[{0}]]></Content>", Content) + Environment.NewLine
                             + String.Format("<MsgId>{0}</MsgId>", MsgId) + Environment.NewLine
                             + String.Format("<AgentID>{0}</AgentID>", AgentID) + Environment.NewLine
                             + "</xml>";
